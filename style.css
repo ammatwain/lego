@@ -1,7 +1,7 @@
 /*
 Theme Name: Lego Blocks Theme
 Theme URI: http://example.com/lego-blocks
-Author: Your Name
+Author: Amedeo Sorpreso
 Author URI: http://example.com
 Description: A simple block-based WordPress theme with a four-column layout (left sidebar, main content, and two right sidebars).
 Version: 1.0
@@ -11,65 +11,554 @@ License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: lego-blocks
 */
+/*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-ThinItalic.woff2") format("woff2");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+/* --- Light --- */
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+/* --- Regular --- */
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+/* --- Medium --- */
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+/* --- Bold --- */
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+/* --- Black --- */
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-BlackItalic.woff2") format("woff2");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RobotoMono";
+  src: url("assets/fonts/roboto/RobotoMono-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RobotoMono";
+  src: url("assets/fonts/roboto/RobotoMono-ThinItalic.woff2") format("woff2");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+/* --- ExtraLight 200 --- */
+@font-face {
+  font-family: "RobotoMono";
+  src: url("assets/fonts/roboto/RobotoMono-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RobotoMono";
+  src: url("assets/fonts/roboto/RobotoMono-ExtraLightItalic.woff2") format("woff2");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+/* --- Light 300 --- */
+@font-face {
+  font-family: "RobotoMono";
+  src: url("assets/fonts/roboto/RobotoMono-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RobotoMono";
+  src: url("assets/fonts/roboto/RobotoMono-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+/* --- Regular 400 --- */
+@font-face {
+  font-family: "RobotoMono";
+  src: url("assets/fonts/roboto/RobotoMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RobotoMono";
+  src: url("assets/fonts/roboto/RobotoMono-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+/* --- Medium 500 --- */
+@font-face {
+  font-family: "RobotoMono";
+  src: url("assets/fonts/roboto/RobotoMono-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RobotoMono";
+  src: url("assets/fonts/roboto/RobotoMono-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+/* --- SemiBold 600 --- */
+@font-face {
+  font-family: "RobotoMono";
+  src: url("assets/fonts/roboto/RobotoMono-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RobotoMono";
+  src: url("assets/fonts/roboto/RobotoMono-SemiBoldItalic.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+/* --- Bold 700 --- */
+@font-face {
+  font-family: "RobotoMono";
+  src: url("assets/fonts/roboto/RobotoMono-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RobotoMono";
+  src: url("assets/fonts/roboto/RobotoMono-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+/*
+Document
+========
+*/
+/**
+Use a better box model (opinionated).
+*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the line height in all browsers.
+3. Prevent adjustments of font size after orientation changes in iOS.
+4. Use a more readable tab size (opinionated).
+*/
+html {
+  font-family: Roboto, system-ui, Helvetica, Arial, sans-serif;
+  /* 1 */
+  line-height: 1.15;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */
+  tab-size: 4;
+  /* 4 */
+}
+
+/*
+Sections
+========
+*/
+/**
+Remove the margin in all browsers.
+*/
+body {
+  margin: 0;
+}
+
+/*
+Text-level semantics
+====================
+*/
+/**
+Add the correct font weight in Chrome and Safari.
+*/
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+code,
+kbd,
+samp,
+pre {
+  font-family: RobotoMono, ui-monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+Add the correct font size in all browsers.
+*/
+small {
+  font-size: 80%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+Tabular data
+============
+*/
+/**
+Correct table border color inheritance in Chrome and Safari. (https://issues.chromium.org/issues/40615503, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/
+table {
+  border-color: currentcolor;
+}
+
+/*
+Forms
+=====
+*/
+/**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+Correct the inability to style clickable types in iOS and Safari.
+*/
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/
+legend {
+  padding: 0;
+}
+
+/**
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+progress {
+  vertical-align: baseline;
+}
+
+/**
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*
+Interactive
+===========
+*/
+/*
+Add the correct display in Chrome and Safari.
+*/
+summary {
+  display: list-item;
+}
 
 /* Add any custom styles here */
+:root {
+  line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+figure,
+p {
+  margin: 0;
+}
+
+/*
+ol,
+ul {
+    margin: 0;
+}
+ol[role="list"],
+ul[role="list"] {
+    list-style: none;
+    padding-inline: 0;
+}
+*/
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+}
 
 /* lock viewport to full-screen desktop app; allow inner scrolling */
 body, html {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    /* don't hide overflow here, allow inner containers to scroll */
+  position: fixed;
+  background: #cccccc;
+  max-width: 100vw;
+  min-width: 100vw;
+  width: 100vw;
+  max-height: 100vh;
+  min-height: 100vh;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  /* don't hide overflow here, allow inner containers to scroll */
 }
-
 
 /* basic grid for four columns */
 /* overall layout container for desktop app */
 .site-layout {
-    display: grid;
-    /* left sidebar, main, right sidebar1, right sidebar2 */
-    grid-template-columns: 200px 1fr 200px 200px;
-    gap: 1rem;
-    min-height: 100vh;
-    max-width: 100vw; /* never wider than viewport */
-    max-height: 100vh; /* never taller than viewport */
-    margin: 0 auto;
-    overflow-x: hidden; /* no horizontal scroll */
-    overflow-y: auto; /* vertical scroll if content exceeds viewport */
+  position: absolute;
+  display: grid;
+  /* left sidebar, main, right sidebar1, right sidebar2 */
+  grid-template-columns: 200px 1fr 200px 200px;
+  gap: 1px;
+  max-width: 100vw;
+  min-width: 100vw;
+  width: 100vw;
+  max-height: 100vh;
+  min-height: 100vh;
+  height: 100vh;
+  margin: 0 0;
+  overflow-x: hidden; /* no horizontal scroll */
+  overflow-y: auto; /* vertical scroll if content exceeds viewport */
 }
 
-.sidebar-left,
-.sidebar-right-1,
-.sidebar-right-2 {
-    background: #f5f5f5;
-    padding: 1rem;
-    width: 200px;
-    max-height: 100vh;
-    overflow-x: hidden; /* fixed width desktop, no internal scroll */
-    overflow-y: auto; /* allow vertical scroll if content tall */
+.lego-sidebar-left,
+.lego-sidebar-right-1,
+.lego-sidebar-right-2 {
+  background: #f5f5f5;
+  padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  width: 200px;
+  max-height: 100vh;
+  overflow-x: hidden; /* fixed width desktop, no internal scroll */
+  overflow-y: auto; /* allow vertical scroll if content tall */
 }
 
 .main-container {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    flex: 1 1 auto; /* take remaining available space */
-    max-height: 100vh;
-    overflow-y: auto; /* vertical scroll for post content */
-    overflow-x: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content auto min-content;
+  gap: 1px;
+  padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  max-height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
 }
-
+.main-container .post-header-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  max-height: 33px;
+  min-height: 33px;
+  height: 33px;
+  line-height: 33px;
+  text-align: center;
+  background: linear-gradient(to bottom, #008C45 0%, #008C45 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #CD212A 66.66%, #CD212A 100%);
+}
+.main-container .post-header-container .wp-block-site-tagline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #2271B1;
+  font-weight: 700;
+  text-wrap: nowrap;
+}
+.main-container .post-content-container {
+  padding: 1rem;
+  background: #ffffff;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  overflow-y: auto; /* scroll if post content exceeds available height */
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+.main-container .footer-content-container {
+  background: #000;
+  max-height: 2.5rem;
+  min-height: 2.5rem;
+  height: 2.5rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  box-sizing: border-box;
+}
 .main-container > * {
-    width: 100%;
+  width: 100%;
 }
 
 /* disable responsive navigation toggles since desktop only */
 .wp-block-navigation__responsive-container,
 .wp-block-navigation__responsive-container-open,
 .wp-block-navigation__responsive-container-close {
-    display: none !important;
+  display: none !important;
 }
+
 .wp-block-navigation .wp-block-navigation__container {
-    display: flex !important;
+  display: flex !important;
 }
+
+/*# sourceMappingURL=style.css.map */

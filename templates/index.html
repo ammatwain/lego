@@ -2,10 +2,10 @@
 <div class="wp-block-group site-layout">
 
     <!-- left sidebar column -->
-    <!-- wp:group {"className":"sidebar-left"} -->
-    <div class="wp-block-group sidebar-left">
-        <!-- wp:site-logo /-->
-        <!-- wp:navigation /-->
+    <!-- wp:group {"className":"lego-sidebar-left"} -->
+    <div class="wp-block-group lego-sidebar-left">
+        <!-- blocco widget dinamico collegato alla sidebar registrata -->
+        <!-- wp:widget-group {"id":"lego-sidebar-left"} /-->
     </div>
     <!-- /wp:group -->
 
@@ -14,21 +14,22 @@
     <div class="wp-block-group main-container">
 
         <!-- header area -->
-        <!-- wp:group {"layout":{"type":"constrained"}} -->
-        <div class="wp-block-group">
-            <!-- wp:site-title {"level":1} /-->
+        <!-- wp:group {"layout":{"type":"constrained"},"className":"post-header-container"} -->
+        <div class="wp-block-group post-header-container">
             <!-- wp:site-tagline /-->
         </div>
         <!-- /wp:group -->
 
-        <!-- wp:group {"layout":{"type":"constrained"}} -->
-        <div class="wp-block-group">
+        <!-- content area -->
+        <!-- wp:group {"layout":{"type":"constrained"},"className":"post-content-container"} -->
+        <div class="wp-block-group post-content-container">
             <!-- wp:post-content /-->
         </div>
         <!-- /wp:group -->
 
-        <!-- wp:group {"layout":{"type":"constrained"}} -->
-        <div class="wp-block-group">
+        <!-- footer area -->
+        <!-- wp:group {"layout":{"type":"constrained"},"className":"footer-content-container"} -->
+        <div class="wp-block-group footer-content-container">
             <!-- wp:site-footer /-->
         </div>
         <!-- /wp:group -->
@@ -37,19 +38,20 @@
     <!-- /wp:group -->
 
     <!-- right sidebar 1 column -->
-    <!-- wp:group {"className":"sidebar-right-1"} -->
-    <div class="wp-block-group sidebar-right-1">
-        <!-- wp:latest-posts /-->
+    <!-- wp:group {"className":"lego-sidebar-right-1"} -->
+    <div class="wp-block-group lego-sidebar-right-1">
+        <!-- blocco widget dinamico collegato alla sidebar registrata -->
+        <!-- wp:widget-group {"id":"lego-sidebar-right-1"} /-->
     </div>
     <!-- /wp:group -->
 
     <!-- right sidebar 2 column -->
-    <!-- wp:group {"className":"sidebar-right-2"} -->
-    <div class="wp-block-group sidebar-right-2">
-        <!-- wp:search /-->
+    <!-- wp:group {"className":"lego-sidebar-right-2"} -->
+    <div class="wp-block-group lego-sidebar-right-2">
+        <!-- blocco widget dinamico collegato alla sidebar registrata -->
+        <!-- wp:widget-group {"id":"lego-sidebar-right-2"} /-->
     </div>
     <!-- /wp:group -->
 
 </div>
 <!-- /wp:group -->
-

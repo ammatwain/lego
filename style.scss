@@ -66,16 +66,16 @@ $accent-color: #2271B1;
 
 /* lock viewport to full-screen desktop app; allow inner scrolling */
 body, html {
-    position: fixed;
-    background: #cccccc;
-    max-width: 100vw;
-    min-width: 100vw;
-    width: 100vw;
-    max-height: 100vh;
-    min-height: 100vh;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
+    //position: fixed;
+    //background: #cccccc;
+    //max-width: 100vw;
+    //min-width: 100vw;
+    //width: 100vw;
+    //max-height: 100vh;
+    //min-height: 100vh;
+    //height: 100vh;
+    //margin: 0;
+    //padding: 0;
     /* don't hide overflow here, allow inner containers to scroll */
 }
 

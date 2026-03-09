@@ -84,3 +84,54 @@ add_filter('render_block_core/widget-group', function ($block_content, $parsed_b
 
     return $block_content;
 }, 10, 2);
+
+/**
+ * Sincronizza i template a blocchi del tema dalla directory
+ * /templates al post_type wp_template. Utile nei deploy.
+ */
+add_action( 'init', function() {
+    // limitare all'area amministrativa/CLI per ridurre il carico
+    if ( ! is_admin() && ! defined( 'WP_CLI' ) ) {
+        return;
+    }
+
+    $dir = get_template_directory() . '/templates';
+    if ( ! is_dir( $dir ) ) {
+        return;
+    }
+
+    $files = scandir( $dir );
+    foreach ( $files as $file ) {
+        if ( pathinfo( $file, PATHINFO_EXTENSION ) !== 'html' ) {
+            continue;
+        }
+
+        $slug    = pathinfo( $file, PATHINFO_FILENAME );
+        $content = file_get_contents( $dir . '/' . $file );
+
+        $existing = get_posts( [
+            'name'        => $slug,
+            'post_type'   => 'wp_template',
+            'post_status' => 'any',
+            'numberposts' => 1,
+        ] );
+
+        if ( $existing ) {
+            $post = $existing[0];
+            if ( $post->post_content !== $content ) {
+                wp_update_post( [
+                    'ID'           => $post->ID,
+                    'post_content' => $content,
+                ] );
+            }
+        } else {
+            wp_insert_post( [
+                'post_type'    => 'wp_template',
+                'post_title'   => ucwords( str_replace( '-', ' ', $slug ) ),
+                'post_name'    => $slug,
+                'post_content' => $content,
+                'post_status'  => 'publish',
+            ] );
+        }
+    }
+} );

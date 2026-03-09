@@ -147,3 +147,25 @@ add_action( 'init', function() {
         lego_sync_block_templates();
     }
 } );
+
+function custom_viewport_meta() {
+    echo '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">';
+}
+
+remove_action( 'wp_head', 'wp_viewport_meta');
+add_action('wp_head', 'custom_viewport_meta', 0);
+
+function lego_cambia_testo_paginazione( $translated_text, $text, $domain ) {
+    // blocco Next
+    if ( $text === 'Next page' || $text === 'Pagina successiva' ) {
+        $translated_text = 'Carica altri articoli';
+    }
+
+    // blocco Previous
+    if ( $text === 'Previous page' || $text === 'Pagina precedente' ) {
+        $translated_text = 'Pagina precedente';
+    }
+
+    return $translated_text;
+}
+add_filter( 'gettext', 'lego_cambia_testo_paginazione', 20, 3 );

@@ -85,11 +85,7 @@ add_filter('render_block_core/widget-group', function ($block_content, $parsed_b
     return $block_content;
 }, 10, 2);
 
-/**
- * Sincronizza i template a blocchi del tema dalla directory
- * /templates al post_type wp_template. Utile nei deploy.
- */
-add_action( 'init', function() {
+function lego_sync_block_templates() {
     // limitare all'area amministrativa/CLI per ridurre il carico
     if ( ! is_admin() && ! defined( 'WP_CLI' ) ) {
         return;
@@ -133,5 +129,21 @@ add_action( 'init', function() {
                 'post_status'  => 'publish',
             ] );
         }
+    }
+}
+
+
+//add_action( 'after_switch_theme', 'lego_sync_block_templates' );
+// e – opzionale – anche in admin/cli per sicurezza
+
+/**
+ * Sincronizza i template a blocchi del tema dalla directory
+ * /templates al post_type wp_template. Utile nei deploy.
+ */
+add_action( 'after_switch_theme', 'lego_sync_block_templates' );
+// e – opzionale – anche in admin/cli per sicurezza
+add_action( 'init', function() {
+    if ( is_admin() || defined( 'WP_CLI' ) ) {
+        lego_sync_block_templates();
     }
 } );

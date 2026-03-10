@@ -211,3 +211,70 @@ function custom_excerpt_length( $length ) {
     return 200; // Change this number to your desired word count
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+// permetto a WP di leggere ?iframe=…
+add_filter( 'query_vars', function( $vars ) {
+    $vars[] = 'iframe';
+    return $vars;
+} );
+
+// registro un blocco dinamico che mostra un iframe con l'URL specificato
+add_action( 'init', function() {
+    register_block_type( 'lego/iframe', [
+        'render_callback' => function( $attrs ) {
+            $raw = wp_strip_all_tags( get_query_var( 'iframe' ) );
+            if ( ! $raw ) {
+                return ''; // niente se non è fornito
+            }
+
+            // non facciamo controlli sull'origine: gli URL esterni sono
+            // accettabili se l'utente li fornisce. ci limitiamo a normalizzare
+            // e sanificare la stringa.
+            $parsed = wp_parse_url( $raw );
+            if ( empty( $parsed['scheme'] ) ) {
+                // percorso relativo, lasciamo così com'è
+                $url = $raw;
+            } else {
+                $url = $raw;
+            }
+
+            $url = esc_url( $url );
+            if ( ! $url ) {
+                // output di debug se la sanitizzazione azzera l'URL
+                return '<p class="iframe-error">URL non valido: ' . esc_html( $raw ) . '</p>';
+            }
+
+            // dimensioni di default, puoi personalizzare con CSS esterno
+            return '<iframe src="' . $url . '" style="width:100%;height:600px;border:1px solid #ccc;"></iframe>';
+        },
+    ] );
+} );
+
+// se è presente il parametro, usiamo template_redirect per caricare
+// il template a blocchi ma racchiuderlo in header/footer del tema.
+add_action( 'template_redirect', function() {
+    if ( $url = get_query_var( 'iframe' ) ) {
+        // log di debug dell'URL passato
+        error_log( '[lego] iframe request: ' . $url );
+
+        // stampo head manuale invece di chiamare get_header(), così evito il
+        // markup predefinito con <div id="header">…
+        echo '<!DOCTYPE html><html ' . get_language_attributes() . '><head>';
+        wp_head();
+        echo '</head><body>';
+
+        $file    = get_template_directory() . '/templates/iframe.html';
+        $content = file_exists( $file ) ? file_get_contents( $file ) : '';
+
+        if ( $content && function_exists( 'do_blocks' ) ) {
+            echo do_blocks( $content );
+        } else {
+            echo $content;
+        }
+
+        wp_footer();
+        echo '</body></html>';
+
+        exit;
+    }
+} );

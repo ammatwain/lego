@@ -11,17 +11,11 @@ License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: lego-blocks
 */
+@use "sass:color";
 @use "roboto";
 @use "roboto-mono";
-
-
-$italian-green: #008C45;
-$italian-white: #FFFFFF;
-$italian-red  : #CD212A;
-
-$accent-color: #2271B1;
-
-$border-radius: 8px;
+@use "variables" as *;
+@use "mixin" as *;
 
 /* lock viewport to full-screen desktop app; allow inner scrolling */
 html {
@@ -93,13 +87,13 @@ body.admin-bar.wp-theme-lego {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: min-content auto min-content;
-    gap: 1px;
     padding: 0;
     margin-block-start: 0;
     margin-block-end: 0;
     max-height: calc( 100vh - 32px);
     overflow: hidden;
     box-sizing: border-box;
+    background-color: white;
     .post-header-container {
         position: relative;
         margin:0;
@@ -109,6 +103,11 @@ body.admin-bar.wp-theme-lego {
         height: 33px;
         line-height: 33px;
         text-align: center;
+        opacity: 0.9;
+        transition: all 0.2s ease;
+        &:hover {
+            opacity: 1;
+        }
         background: linear-gradient(
             to bottom,
             $italian-green 0%,
@@ -168,6 +167,73 @@ body.admin-bar.wp-theme-lego {
 }
 
 
+.lego-single {
+    display: flex;
+    padding: 1rem;
+//    background-color: black;
+    box-sizing: border-box;
+    min-height: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    //max-width: calc(100vw - (256px * 3) - 2rem);
+    //max-width: calc(100vw - (256px * 3) - 2rem);
+    //max-height: calc(100% - 66px);
+    .wp-block-group.post-content-container{
+        padding: 0;
+        background: #ccc;
+        min-height: 100%;
+        max-height: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        display: grid;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content min-content auto min-content;
+        gap: 1px;
+
+        overflow: hidden;
+        border: 1px solid #ccc;
+        border-radius: $border-radius;
+
+        .wp-block-post-title {
+            @include lego-wp-block-post-title;
+        }
+        
+        .wp-block-post-date {
+            @include lego-wp-block-post-date;
+        }
+        .lego-post-content-container {
+            margin: 0;
+            padding: 0.5rem;
+            font-weight: 100;
+            text-align: left ;
+            overflow: hidden;
+            overflow-y: auto;
+            background-color: #ffffff;
+            .wp-block-post-content {
+                margin: 0;
+                padding: 0.5rem;
+                font-size: 1rem;
+                font-weight: 100;
+                text-align: left ;
+                overflow: hidden;
+                background-color: #ffffff;
+            }
+
+        }
+        .wp-block-post-comments {
+            margin: 0;
+            padding: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 100;
+            text-align: left ;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+    }
+}
+
 .wp-block-query>ul {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -193,54 +259,68 @@ body.admin-bar.wp-theme-lego {
         max-height: 300px;
         margin:0;
         padding:0;
-        div.post-excerpt{
-            //padding: 1rem;
-            background: #ccc;
-            height: 100%;
+        a {
+            text-decoration: none;
+            div.post-excerpt{
+                max-height: 300px;
+                //padding: 1rem;
+                background: #ccc;
+                height: 100%;
 
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: min-content min-content auto;
-            gap: 1px;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: min-content min-content auto;
+                gap: 1px;
 
-            overflow: hidden;
-            max-height: 300px;
-            border: 1px solid #ccc;
-            border-radius: $border-radius;
-
-            .wp-block-post-title {
-                margin: 0;
-                padding: 0.5rem;
-                font-size: 1rem;
-                font-weight: 500;
-                background-color: #ffffff;
-            }
-            .wp-block-post-date {
-                margin: 0;
-                padding: 0;
-                padding-right: 0.5rem;
-                font-size: 0.75rem;
-                font-weight: 100;
-                font-style: italic;
-                text-align: right;
-                background-color: #ffffff;
-            }
-            .wp-block-post-excerpt {
-                margin: 0;
-                padding: 0.5rem;
-                font-size: 0.75rem;
-                font-weight: 100;
-                text-align: left ;
                 overflow: hidden;
-                background-color: #ffffff;
-                .wp-block-post-excerpt__excerpt {
-                    display: -webkit-box;
-                    -webkit-line-clamp: 5; /* number of lines to show */
-                    line-clamp: 5; /* number of lines to show */
-                    -webkit-box-orient: vertical;
-                    box-orient: vertical;
-                    text-overflow: ellipsis;
+                border: 1px solid #ccc;
+                border-radius: $border-radius;
+
+                .wp-block-post-title {
+                    transition: all 0.2s ease;
+                    @include lego-wp-block-post-title;
+                }
+                
+                .wp-block-post-date {
+                    @include lego-wp-block-post-date;
+                }
+                .wp-block-post-excerpt {
+                    position: relative;
+                    margin: 0;
+                    padding: 0.5rem;
+                    font-size: 0.75rem;
+                    font-weight: 100;
+                    text-align: left ;
                     overflow: hidden;
+                    background-color: #ffffff;
+                    .wp-block-post-excerpt__excerpt {
+                        display: -webkit-box;
+                        -webkit-line-clamp: 5; /* number of lines to show */
+                        line-clamp: 5; /* number of lines to show */
+                        -webkit-box-orient: vertical;
+                        box-orient: vertical;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 1px;
+                        background:  linear-gradient(
+                            to bottom,
+                            transparent 0%,
+                            rgba(255,255,255, 0.8) 50%,
+                            white 100%
+                        );
+                    }
+                }
+            }
+            &:hover {
+                .wp-block-post-title {
+                    color: color.mix($accent-color, #ffffff, 90%);
                 }
             }
         }
@@ -257,6 +337,9 @@ body.admin-bar.wp-theme-lego {
     gap: 1px;
     div{
         display: inline-block;
+    }
+    .h-spacer {
+        flex: 1;
     }
     .wp-block-query-pagination-next,
     .wp-block-query-pagination-previous,

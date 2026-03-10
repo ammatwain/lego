@@ -169,3 +169,45 @@ function lego_cambia_testo_paginazione( $translated_text, $text, $domain ) {
     return $translated_text;
 }
 add_filter( 'gettext', 'lego_cambia_testo_paginazione', 20, 3 );
+
+// functions.php o un include
+function lego_register_permalink_block() {
+    register_block_type( 'lego/link-only', [
+        'render_callback' => function() {
+            return esc_url( get_permalink() );
+        },
+    ]);
+}
+add_action( 'init', 'lego_register_permalink_block' );
+
+// wrapper block that wraps inner HTML in a link to the current post
+function lego_register_link_wrapper_block() {
+    register_block_type( 'lego/link-wrapper', [
+        'render_callback' => 'lego_render_link_wrapper',
+        // allow inner blocks so the editor can nest content
+        'supports'         => [
+            'html' => false, // we will print our own HTML
+        ],
+        'attributes'       => [],
+    ]);
+}
+add_action( 'init', 'lego_register_link_wrapper_block' );
+
+function lego_render_link_wrapper( $attributes, $content ) {
+    // try to get permalink for the current post in the loop
+    $url = '';
+    if ( function_exists( 'get_permalink' ) ) {
+        global $post;
+        if ( $post instanceof WP_Post ) {
+            $url = get_permalink( $post );
+        }
+    }
+
+    // even if url is empty we still output children
+    return '<a href="' . esc_url( $url ) . '">' . $content . '</a>';
+}
+
+function custom_excerpt_length( $length ) {
+    return 200; // Change this number to your desired word count
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );

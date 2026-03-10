@@ -15,9 +15,11 @@
 
         <!-- header area -->
         <!-- wp:group {"layout":{"type":"constrained"},"className":"post-header-container"} -->
+        <a href="/46baweb/">
         <div class="wp-block-group post-header-container">
             <!-- wp:site-tagline /-->
         </div>
+        </a>
         <!-- /wp:group -->
 
         <!-- content area -->
@@ -26,18 +28,18 @@
             <!-- wp:query {"query":{"perPage":9,"order":"desc","orderBy":"date"}} -->
             <div class="wp-block-query">
                 <!-- wp:post-template -->
+                <!-- wp:lego/link-wrapper -->
                 <!-- wp:group {"className":"post-excerpt"} -->
                 <div class="wp-block-group post-excerpt">
-                    <!-- wp:post-title {"isLink":true} /-->
+                    <!-- wp:post-title /-->
                     <!-- wp:post-date {"format":"d/m/Y H:i"} /-->
                     <!-- wp:post-excerpt /-->
                 </div>
                 <!-- /wp:group -->
+                <!-- /wp:lego/link-wrapper -->
                 <!-- /wp:post-template -->
-
             </div>
             <!-- /wp:query -->
-
         </div>
         <!-- /wp:group -->
 

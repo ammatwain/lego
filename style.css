@@ -275,13 +275,13 @@ body.admin-bar.wp-theme-lego {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: min-content auto min-content;
-  gap: 1px;
   padding: 0;
   margin-block-start: 0;
   margin-block-end: 0;
   max-height: calc(100vh - 32px);
   overflow: hidden;
   box-sizing: border-box;
+  background-color: white;
 }
 .main-container .post-header-container {
   position: relative;
@@ -292,6 +292,13 @@ body.admin-bar.wp-theme-lego {
   height: 33px;
   line-height: 33px;
   text-align: center;
+  opacity: 0.9;
+  transition: all 0.2s ease;
+}
+.main-container .post-header-container:hover {
+  opacity: 1;
+}
+.main-container .post-header-container {
   background: linear-gradient(to bottom, #008C45 0%, #008C45 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #CD212A 66.66%, #CD212A 100%);
 }
 .main-container .post-header-container .wp-block-site-tagline {
@@ -338,6 +345,76 @@ body.admin-bar.wp-theme-lego {
 
 .wp-block-navigation .wp-block-navigation__container {
   display: flex !important;
+}
+
+.lego-single {
+  display: flex;
+  padding: 1rem;
+  box-sizing: border-box;
+  min-height: 100%;
+  max-height: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
+.lego-single .wp-block-group.post-content-container {
+  padding: 0;
+  background: #ccc;
+  min-height: 100%;
+  max-height: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content min-content auto min-content;
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.lego-single .wp-block-group.post-content-container .wp-block-post-title {
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: rgb(232.9, 240.8, 247.2);
+}
+.lego-single .wp-block-group.post-content-container .wp-block-post-date {
+  margin: 0;
+  padding: 0;
+  padding-right: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 100;
+  font-style: italic;
+  text-align: right;
+  color: #2271B1;
+  background-color: rgb(243.95, 247.9, 251.1);
+}
+.lego-single .wp-block-group.post-content-container .lego-post-content-container {
+  margin: 0;
+  padding: 0.5rem;
+  font-weight: 100;
+  text-align: left;
+  overflow: hidden;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+.lego-single .wp-block-group.post-content-container .lego-post-content-container .wp-block-post-content {
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 100;
+  text-align: left;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+.lego-single .wp-block-group.post-content-container .wp-block-post-comments {
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 100;
+  text-align: left;
+  overflow: hidden;
+  background-color: #ffffff;
 }
 
 .wp-block-query > ul {
@@ -390,7 +467,11 @@ body.admin-bar.wp-theme-lego {
   margin: 0;
   padding: 0;
 }
-.wp-block-query > ul > li div.post-excerpt {
+.wp-block-query > ul > li a {
+  text-decoration: none;
+}
+.wp-block-query > ul > li a div.post-excerpt {
+  max-height: 300px;
   background: #ccc;
   height: 100%;
   display: grid;
@@ -398,18 +479,18 @@ body.admin-bar.wp-theme-lego {
   grid-template-rows: min-content min-content auto;
   gap: 1px;
   overflow: hidden;
-  max-height: 300px;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
-.wp-block-query > ul > li div.post-excerpt .wp-block-post-title {
+.wp-block-query > ul > li a div.post-excerpt .wp-block-post-title {
+  transition: all 0.2s ease;
   margin: 0;
   padding: 0.5rem;
   font-size: 1rem;
   font-weight: 500;
-  background-color: #ffffff;
+  background-color: rgb(232.9, 240.8, 247.2);
 }
-.wp-block-query > ul > li div.post-excerpt .wp-block-post-date {
+.wp-block-query > ul > li a div.post-excerpt .wp-block-post-date {
   margin: 0;
   padding: 0;
   padding-right: 0.5rem;
@@ -417,9 +498,11 @@ body.admin-bar.wp-theme-lego {
   font-weight: 100;
   font-style: italic;
   text-align: right;
-  background-color: #ffffff;
+  color: #2271B1;
+  background-color: rgb(243.95, 247.9, 251.1);
 }
-.wp-block-query > ul > li div.post-excerpt .wp-block-post-excerpt {
+.wp-block-query > ul > li a div.post-excerpt .wp-block-post-excerpt {
+  position: relative;
   margin: 0;
   padding: 0.5rem;
   font-size: 0.75rem;
@@ -428,7 +511,7 @@ body.admin-bar.wp-theme-lego {
   overflow: hidden;
   background-color: #ffffff;
 }
-.wp-block-query > ul > li div.post-excerpt .wp-block-post-excerpt .wp-block-post-excerpt__excerpt {
+.wp-block-query > ul > li a div.post-excerpt .wp-block-post-excerpt .wp-block-post-excerpt__excerpt {
   display: -webkit-box;
   -webkit-line-clamp: 5; /* number of lines to show */
   line-clamp: 5; /* number of lines to show */
@@ -436,6 +519,18 @@ body.admin-bar.wp-theme-lego {
   box-orient: vertical;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+.wp-block-query > ul > li a div.post-excerpt .wp-block-post-excerpt::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.8) 50%, white 100%);
+}
+.wp-block-query > ul > li a:hover .wp-block-post-title {
+  color: rgb(56.1, 127.2, 184.8);
 }
 
 .wp-block-query-pagination, .wp-post-navigation {
@@ -449,6 +544,9 @@ body.admin-bar.wp-theme-lego {
 }
 .wp-block-query-pagination div, .wp-post-navigation div {
   display: inline-block;
+}
+.wp-block-query-pagination .h-spacer, .wp-post-navigation .h-spacer {
+  flex: 1;
 }
 .wp-block-query-pagination .wp-block-query-pagination-next,
 .wp-block-query-pagination .wp-block-query-pagination-previous,

@@ -1,0 +1,77 @@
+@use 'sass:color';
+@use "variables" as *;
+
+@mixin lego-wp-block-post-title {
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: color.mix($accent-color, #ffffff, 10%);
+} 
+
+    
+@mixin lego-wp-block-post-date {
+    margin: 0;
+    padding: 0;
+    padding-right: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 100;
+    font-style: italic;
+    text-align: right;
+    color: $accent-color;
+    background-color: color.mix($accent-color, #ffffff, 5%);
+    //background-color: $italian-white;
+}
+
+@mixin lego-article {
+    //padding: 1rem;
+    background: #ccc;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content auto;
+    gap: 1px;
+
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: $border-radius;
+
+    .wp-block-post-title {
+        margin: 0;
+        padding: 0.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        background-color: #ffffff;
+    }
+
+    .wp-block-post-date {
+        margin: 0;
+        padding: 0;
+        padding-right: 0.5rem;
+        font-size: 0.75rem;
+        font-weight: 100;
+        font-style: italic;
+        text-align: right;
+        background-color: #ffffff;
+    }
+    .wp-block-post-excerpt {
+        margin: 0;
+        padding: 0.5rem;
+        font-size: 0.75rem;
+        font-weight: 100;
+        text-align: left ;
+        overflow: hidden;
+        //background-color: #ffffff;
+        background-color: color.mix($italian-red, #ffffff, 50%);
+        .wp-block-post-excerpt__excerpt {
+            display: -webkit-box;
+            -webkit-line-clamp: 5; /* number of lines to show */
+            line-clamp: 5; /* number of lines to show */
+            -webkit-box-orient: vertical;
+            box-orient: vertical;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+}

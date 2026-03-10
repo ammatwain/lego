@@ -222,6 +222,7 @@ pre {
 /* basic grid for four columns */
 /* overall layout container for desktop app */
 .body, html {
+  /*
   position: fixed;
   background: #cccccc;
   max-width: 100vw;
@@ -232,6 +233,7 @@ pre {
   height: 100vh;
   margin: 0;
   padding: 0;
+  */
   overflow: hidden; /* prevent outer scroll, allow inner containers to scroll */
 }
 

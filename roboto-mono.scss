@@ -1,123 +1,112 @@
+/* roboto-mono-100 - cyrillic_cyrillic-ext_greek_latin_latin-ext_vietnamese */
 @font-face {
-    font-family: 'RobotoMono';
-    src: url('assets/fonts/roboto/RobotoMono-Thin.woff2') format('woff2');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'RobotoMono';
+  font-style: normal;
+  font-weight: 100;
+  src: url('assets/fonts/roboto-mono/roboto-mono-100.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
+/* roboto-mono-100italic - cyrillic_cyrillic-ext_greek_latin_latin-ext_vietnamese */
 @font-face {
-    font-family: 'RobotoMono';
-    src: url('assets/fonts/roboto/RobotoMono-ThinItalic.woff2') format('woff2');
-    font-weight: 100;
-    font-style: italic;
-    font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'RobotoMono';
+  font-style: italic;
+  font-weight: 100;
+  src: url('assets/fonts/roboto-mono/roboto-mono-100italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
-/* --- ExtraLight 200 --- */
-
+/* roboto-mono-200 - cyrillic_cyrillic-ext_greek_latin_latin-ext_vietnamese */
 @font-face {
-    font-family: 'RobotoMono';
-    src: url('assets/fonts/roboto/RobotoMono-ExtraLight.woff2') format('woff2');
-    font-weight: 200;
-    font-style: normal;
-    font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'RobotoMono';
+  font-style: normal;
+  font-weight: 200;
+  src: url('assets/fonts/roboto-mono/roboto-mono-200.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
+/* roboto-mono-200italic - cyrillic_cyrillic-ext_greek_latin_latin-ext_vietnamese */
 @font-face {
-    font-family: 'RobotoMono';
-    src: url('assets/fonts/roboto/RobotoMono-ExtraLightItalic.woff2') format('woff2');
-    font-weight: 200;
-    font-style: italic;
-    font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'RobotoMono';
+  font-style: italic;
+  font-weight: 200;
+  src: url('assets/fonts/roboto-mono/roboto-mono-200italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
-/* --- Light 300 --- */
-
+/* roboto-mono-300 - cyrillic_cyrillic-ext_greek_latin_latin-ext_vietnamese */
 @font-face {
-    font-family: 'RobotoMono';
-    src: url('assets/fonts/roboto/RobotoMono-Light.woff2') format('woff2');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'RobotoMono';
+  font-style: normal;
+  font-weight: 300;
+  src: url('assets/fonts/roboto-mono/roboto-mono-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
+/* roboto-mono-300italic - cyrillic_cyrillic-ext_greek_latin_latin-ext_vietnamese */
 @font-face {
-    font-family: 'RobotoMono';
-    src: url('assets/fonts/roboto/RobotoMono-LightItalic.woff2') format('woff2');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'RobotoMono';
+  font-style: italic;
+  font-weight: 300;
+  src: url('assets/fonts/roboto-mono/roboto-mono-300italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
-/* --- Regular 400 --- */
-
+/* roboto-mono-regular - cyrillic_cyrillic-ext_greek_latin_latin-ext_vietnamese */
 @font-face {
-    font-family: 'RobotoMono';
-    src: url('assets/fonts/roboto/RobotoMono-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'RobotoMono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('assets/fonts/roboto-mono/roboto-mono-400.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
+/* roboto-mono-italic - cyrillic_cyrillic-ext_greek_latin_latin-ext_vietnamese */
 @font-face {
-    font-family: 'RobotoMono';
-    src: url('assets/fonts/roboto/RobotoMono-Italic.woff2') format('woff2');
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'RobotoMono';
+  font-style: italic;
+  font-weight: 400;
+  src: url('assets/fonts/roboto-mono/roboto-mono-400italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
-/* --- Medium 500 --- */
-
+/* roboto-mono-500 - cyrillic_cyrillic-ext_greek_latin_latin-ext_vietnamese */
 @font-face {
-    font-family: 'RobotoMono';
-    src: url('assets/fonts/roboto/RobotoMono-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'RobotoMono';
+  font-style: normal;
+  font-weight: 500;
+  src: url('assets/fonts/roboto-mono/roboto-mono-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
+/* roboto-mono-500italic - cyrillic_cyrillic-ext_greek_latin_latin-ext_vietnamese */
 @font-face {
-    font-family: 'RobotoMono';
-    src: url('assets/fonts/roboto/RobotoMono-MediumItalic.woff2') format('woff2');
-    font-weight: 500;
-    font-style: italic;
-    font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'RobotoMono';
+  font-style: italic;
+  font-weight: 500;
+  src: url('assets/fonts/roboto-mono/roboto-mono-500italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
-/* --- SemiBold 600 --- */
-
+/* roboto-mono-600 - cyrillic_cyrillic-ext_greek_latin_latin-ext_vietnamese */
 @font-face {
-    font-family: 'RobotoMono';
-    src: url('assets/fonts/roboto/RobotoMono-SemiBold.woff2') format('woff2');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'RobotoMono';
+  font-style: normal;
+  font-weight: 600;
+  src: url('assets/fonts/roboto-mono/roboto-mono-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
+/* roboto-mono-600italic - cyrillic_cyrillic-ext_greek_latin_latin-ext_vietnamese */
 @font-face {
-    font-family: 'RobotoMono';
-    src: url('assets/fonts/roboto/RobotoMono-SemiBoldItalic.woff2') format('woff2');
-    font-weight: 600;
-    font-style: italic;
-    font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'RobotoMono';
+  font-style: italic;
+  font-weight: 600;
+  src: url('assets/fonts/roboto-mono/roboto-mono-600italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
-/* --- Bold 700 --- */
-
+/* roboto-mono-700 - cyrillic_cyrillic-ext_greek_latin_latin-ext_vietnamese */
 @font-face {
-    font-family: 'RobotoMono';
-    src: url('assets/fonts/roboto/RobotoMono-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'RobotoMono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('assets/fonts/roboto-mono/roboto-mono-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
+/* roboto-mono-700italic - cyrillic_cyrillic-ext_greek_latin_latin-ext_vietnamese */
 @font-face {
-    font-family: 'RobotoMono';
-    src: url('assets/fonts/roboto/RobotoMono-BoldItalic.woff2') format('woff2');
-    font-weight: 700;
-    font-style: italic;
-    font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'RobotoMono';
+  font-style: italic;
+  font-weight: 700;
+  src: url('assets/fonts/roboto-mono/roboto-mono-700italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }

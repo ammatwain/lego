@@ -278,3 +278,15 @@ add_action( 'template_redirect', function() {
         exit;
     }
 } );
+
+function enqueue_custom_script() {
+    wp_enqueue_script(
+        'speech2-js', // Handle name
+        get_template_directory_uri() . '/assets/js/speech2.js', // File path
+        array(), // Dependencies (e.g., array('jquery'))
+        '1.0.0', // Version
+        true // Load in footer (recommended for performance)
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_script');
+add_action('admin_enqueue_scripts', 'enqueue_custom_script');

@@ -98,15 +98,23 @@ body.admin-bar.wp-theme-lego {
             padding: 0;
             li{
                 margin: 0;
-                padding: 0;
+                padding: 0 $size-xs;
                 list-style: none;
+                &::before {
+                    content: "·";
+                    color: $accent-color;
+                    display: inline-block;
+                    width: $size-xs;
+                    margin-left: -$size-xs;
+                }
                 a {
                     text-decoration: none;
                     color: $accent-color;
                     font-size: $size-md;
                     font-weight: 400;
+                    margin-left: 0;
                     &:hover {
-                        text-decoration: underline;
+                        background-color: white;
                     }
                 }
             }

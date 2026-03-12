@@ -15,6 +15,9 @@ Text Domain: lego-blocks
 
 @use "roboto";
 @use "roboto-mono";
+@use "roboto-condensed";
+@use "roboto-slab";
+@use "roboto-serif";
 @use "variables" as *;
 @use "mixin" as *;
 
@@ -250,6 +253,7 @@ body.admin-bar.wp-theme-lego {
             @include lego-wp-block-post-date;
         }
         .lego-post-content-container {
+            position: relative;
             margin: 0;
             padding: $padding;
             font-weight: 400;
@@ -260,7 +264,8 @@ body.admin-bar.wp-theme-lego {
             .wp-block-post-content {
                 margin: 0;
                 padding: $padding;
-                font-size: 1rem;
+                font-family: RobotoSerif, serif;
+                font-size: 1.25vw;
                 font-weight: 400;
                 text-align: left ;
                 overflow: hidden;
